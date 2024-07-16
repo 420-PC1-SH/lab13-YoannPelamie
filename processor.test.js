@@ -26,6 +26,7 @@ describe("transmission processor", function () {
         let result = processor("9701::<487297403495720912>");
         expect(result.rawData).not.toEqual(undefined);
     });
+
     test("throws error if rawData does not start with <", function () {
         const expectedError = new Error("rawData must start with '<'");
         expect(() => { processor("9701::489584872710>"); }).toThrow(expectedError);
@@ -40,7 +41,7 @@ describe("transmission processor", function () {
         const expectedError = new Error("rawData must start with '<' and end with '>'");
         expect(() => { processor("9701::489584872710"); }).toThrow(expectedError);
     });
-
+    
     test("throws error if id is not a number", function () {
         const expectedError = new Error("id must be a number");
         expect(() => { processor("abcd::<489584872710>"); }).toThrow(expectedError);

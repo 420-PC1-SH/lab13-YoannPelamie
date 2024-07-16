@@ -22,7 +22,6 @@ if (isNaN(idPart)) {
     throw new Error("id must be a number");
 }
 
-
 if (!/^\d+$/.test(rawData)) {
     throw new Error("rawData must contain only numbers between '<' and '>'");
 }

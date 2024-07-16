@@ -46,4 +46,9 @@ describe("transmission processor", function () {
         expect(() => { processor("abcd::<489584872710>"); }).toThrow(expectedError);
     });
 
+    test("throws error if rawData does not contains only numbers", function () {
+        const expectedError = new Error("rawData must contain only numbers between '<' and '>'");
+        expect(() => { processor("9701::<4895abc872710>"); }).toThrow(expectedError);
+    });
+
 });

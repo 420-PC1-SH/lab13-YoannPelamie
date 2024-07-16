@@ -1,4 +1,4 @@
-const greet = require('./greetings.js');
+const greet = require('./greeting.js');
 
 describe("greet function", function () {
 
@@ -9,6 +9,11 @@ describe("greet function", function () {
 
     test("returns greeting message with no name", function () {
         let result = greet("");
+        expect(result).toBe("Hello, there");
+    });
+
+    test("returns greeting message with no name", function () {
+        let result = greet(undefined);
         expect(result).toBe("Hello, there");
     });
 
